@@ -1,0 +1,61 @@
+.blue-card {
+  background: #046b99;
+  color: #fff;
+}
+
+.blue-gradient {
+  background: linear-gradient(180deg, #01395e 3.31%, #046b99 26.15%);
+}
+
+.dark-banner {
+  background: #323a45;
+  color: #fff;
+  padding: 40px 0px;
+}
+
+.dark-text {
+  color: #3b3a48;
+}
+
+.ghost-button {
+  border: 1px solid #fff;
+  color: #fff;
+}
+
+.gray {
+  background: #ededef;
+}
+
+.light-gray {
+  background: #eef8fb;
+}
+
+.focus-area-header {
+  background: linear-gradient(13deg, #eef8fb 0%, #6db7d8 100%);
+}
+
+.purple-text {
+  color: #035376;
+}
+
+.text-align-center {
+  text-align: center;
+}
+
+.objective-card {
+  background: #eef8fb;
+}
+
+.objective-card > h3 {
+  color: #035376;
+}
+
+@media screen and (max-width: 767px) {
+  .container .my-4 {
+    flex-direction: column;
+  }
+
+  .mobile-order-2 {
+    order: 2;
+  }
+}
