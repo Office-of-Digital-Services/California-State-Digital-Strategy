@@ -1,10 +1,14 @@
+strong {
+  font-weight: bold;
+}
+
 .blue-card {
   background: #046b99;
   color: #fff;
 }
 
 .blue-gradient {
-  background: linear-gradient(180deg, #01395e 3.31%, #046b99 26.15%);
+  background: linear-gradient(180deg, #01395e 26.31%, #046b99 95.15%);
 }
 
 .dark-banner {
@@ -17,8 +21,18 @@
   color: #3b3a48;
 }
 
+.focus-area-header {
+  background: linear-gradient(13deg, #eef8fb 0%, #6db7d8 100%);
+}
+
 .ghost-button {
   border: 1px solid #fff;
+  color: #fff;
+}
+.ghost-button:hover {
+  /* background: #a3a3a3d6; */
+  border: 1px solid #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
   color: #fff;
 }
 
@@ -26,20 +40,26 @@
   background: #ededef;
 }
 
+.grid-link-margin {
+  margin-bottom: 1rem;
+}
+
 .light-gray {
   background: #eef8fb;
 }
 
-.focus-area-header {
-  background: linear-gradient(13deg, #eef8fb 0%, #6db7d8 100%);
+.logo {
+  align-self: flex-end;
+  width: 3rem;
+}
+
+.mobile-order-2 {
+  flex-basis: min-content;
+  flex-grow: 2;
 }
 
 .purple-text {
   color: #035376;
-}
-
-.text-align-center {
-  text-align: center;
 }
 
 .objective-card {
@@ -50,12 +70,22 @@
   color: #035376;
 }
 
+.text-align-center {
+  text-align: center;
+}
+
+@media screen and (max-width: 991px) {
+  .mobile-order-2 {
+    order: 2;
+  }
+}
+
 @media screen and (max-width: 767px) {
   .container .my-4 {
     flex-direction: column;
   }
 
-  .mobile-order-2 {
-    order: 2;
+  .grid-link-margin {
+    margin-bottom: 0;
   }
 }
