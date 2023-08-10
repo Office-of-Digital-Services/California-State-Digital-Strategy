@@ -2,6 +2,11 @@ strong {
   font-weight: bold;
 }
 
+.anchor {
+  color: #046b99;
+  cursor: pointer;
+}
+
 .blue-card {
   background: #046b99;
   color: #fff;
@@ -19,6 +24,10 @@ strong {
 
 .dark-text {
   color: #3b3a48;
+}
+
+.feedback {
+  background-color: #f3f3f4;
 }
 
 .focus-area-header {
