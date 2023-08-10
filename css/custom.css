@@ -8,11 +8,11 @@ strong {
 }
 
 .blue-gradient {
-  background: linear-gradient(180deg, #01395e 26.31%, #046b99 95.15%);
+  background: linear-gradient(180deg, #01425e 26.31%, #046b99 95.15%);
 }
 
 .dark-banner {
-  background: #323a45;
+  background: #054660;
   color: #fff;
   padding: 40px 0px;
 }
