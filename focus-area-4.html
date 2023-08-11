@@ -215,14 +215,68 @@
                 </div>
               </div>
             </div>
+            <!-- Begin feedback form -->
             <div class="feedback p-a-md m-t-60">
               <div class="container">
                 <h2 class="m-t-0">Your feedback matters</h2>
-                <p class="m-b-0">We welcome your input. <a class="anchor">Provide
-                    feedback</a>
-                </p>
+                <div class="m-b-0">
+                  <ol class="no-icon-accordion" data-aria-accordion data-multi data-transition data-default="none">
+                    <li class="no-icon-accordion">
+                      <span class="no-icon-accordion" data-aria-accordion-heading>Provide feedback.</span>
+                      <div class="no-icon-accordion" data-aria-accordion-panel>
+                        <label class="form-control-label m-t-md" for="InputName">
+                          <span class="required-label">*</span>
+                          <span class="sr-only">Required field:</span>
+                          Your name
+                        </label>
+                        <input type="text" class="form-control" id="InputName" required>
+                        <div class="invalid-feedback d-block">This field is required</div>
+
+                        <label class="form-control-label m-t-md" for="InputEmail">
+                          <span class="required-label">*</span>
+                          <span class="sr-only">Required field:</span>
+                          Email
+                        </label>
+                        <input type="text" class="form-control" id="InputEmail" required>
+                        <div class="invalid-feedback d-block">This field is required</div>
+
+                        <label class="form-control-label m-t-md" for="InputDepartment">Department or
+                          agency</label>
+                        <input type="text" class="form-control" id="InputDepartment">
+                        <div class="feedback text-muted"></div>
+
+                        <label for="Select" class="m-t-md">Topic</label>
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
+                          id="Select">
+                          <option selected="">Select an option</option>
+                          <option value="1">Human-Centered Design</option>
+                          <option value="2">Efficient Growth Scaling</option>
+                          <option value="3">Promoting Standards and Best Practices</option>
+                          <option value="4">Empowering Partners</option>
+                          <option value="5">General Strategy Feedback</option>
+                          <option value="6">Other</option>
+
+                        </select>
+
+                        <label class="form-control-label m-t-md" for="InputCommentRequired">
+                          <span class="required-label">*</span>
+                          <span class="sr-only">Required field:</span>
+                          Your feedback or comments
+                        </label>
+                        <textarea id="InputCommentRequired" class="form-control" rows="5" cols="80"></textarea>
+                        <div class="invalid-feedback d-block">This field is required</div>
+
+                        <div class="btn-row m-t-lg">
+                          <button class="btn btn-primary">Submit</button>
+                          <button class="btn btn-outline-standout">Cancel</button>
+                        </div>
+                      </div>
+                    </li>
+                  </ol>
+                </div>
               </div>
             </div>
+            <!-- End feedback form -->
           </div>
           <!-- End container -->
         </div>

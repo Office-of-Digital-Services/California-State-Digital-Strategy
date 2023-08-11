@@ -2,6 +2,14 @@ strong {
   font-weight: bold;
 }
 
+.accordion__panel[aria-hidden="false"] {
+  padding-right: 20rem;
+}
+
+.accordion__trigger {
+  padding: 0;
+}
+
 .anchor {
   color: #046b99;
   cursor: pointer;
@@ -16,9 +24,13 @@ strong {
   background: linear-gradient(180deg, #01425e 26.31%, #046b99 95.15%);
 }
 
+.col img {
+  width: 100%;
+}
+
 .dark-banner {
-  background: #054660;
-  color: #fff;
+  background: linear-gradient(13deg, #eef8fb 0%, #6db7d8 100%);
+  color: #000;
   padding: 40px 0px;
 }
 
@@ -59,12 +71,20 @@ strong {
 
 .logo {
   align-self: flex-end;
-  width: 3rem;
+  width: 55px;
 }
 
 .mobile-order-2 {
   flex-basis: min-content;
   flex-grow: 2;
+}
+
+button::before {
+  content: none !important;
+}
+
+.p-r-larger {
+  padding-right: 17rem;
 }
 
 .purple-text {
@@ -84,8 +104,24 @@ strong {
 }
 
 @media screen and (max-width: 991px) {
+  .col img {
+    width: 50%;
+  }
+
+  .container .my-4 {
+    flex-direction: column;
+  }
+
+  .logo {
+    width: 44px;
+  }
+
   .mobile-order-2 {
     order: 2;
+  }
+
+  .p-r-larger {
+    padding-right: unset;
   }
 }
 
@@ -96,5 +132,11 @@ strong {
 
   .grid-link-margin {
     margin-bottom: 0;
+  }
+}
+
+@media screen and (max-width: 479px) {
+  .text-2-5rem {
+    font-size: 1.5rem !important;
   }
 }
