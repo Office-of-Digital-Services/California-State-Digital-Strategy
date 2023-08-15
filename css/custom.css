@@ -15,6 +15,11 @@ strong {
   cursor: pointer;
 }
 
+.col .banner-image {
+  padding: 0 !important;
+  width: 120%;
+}
+
 .blue-card {
   background: #046b99;
   color: #fff;
@@ -104,8 +109,8 @@ button::before {
 }
 
 @media screen and (max-width: 991px) {
-  .col img {
-    width: 50%;
+  .col .banner-image {
+    width: 30%;
   }
 
   .container .my-4 {
