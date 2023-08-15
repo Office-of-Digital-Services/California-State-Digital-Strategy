@@ -15,9 +15,8 @@ strong {
   cursor: pointer;
 }
 
-.col .banner-image {
-  padding: 0 !important;
-  width: 120%;
+.black-text {
+  color: #000;
 }
 
 .blue-card {
@@ -27,6 +26,11 @@ strong {
 
 .blue-gradient {
   background: linear-gradient(180deg, #01425e 26.31%, #046b99 95.15%);
+}
+
+.col .banner-image {
+  padding: 0 !important;
+  width: 120%;
 }
 
 .col img {
