@@ -9,6 +9,9 @@
   <meta name="Keywords" content="California, government" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+  <link rel="shortcut icon" href="https://cdt.ca.gov/wp-content/uploads/2017/01/techblog-icon.png" />
+
+
   <!-- State Template CDN CSS -->
   <link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/cagov.core.css">
   <link rel="stylesheet" href="https://california.azureedge.net/cdt/statetemplate/6.2.0/css/colortheme-oceanside.css">
@@ -49,8 +52,9 @@
         <div class="header-organization-banner">
           <a href="index.html">
             <div class="logo-assets">
-              <img src="images/strategy-icon.svg" class="logo-img logo" alt="State Template Logo"
-                style="aspect-ratio: 80 / 48.17">
+              <div class="text-3rem p-r color-highlight ">
+                <span class="ca-gov-icon-project" aria-hidden="true"></span>
+              </div>
               <div class="logo-text">
                 <span class="logo-state">California State</span>
                 <span class="logo-dept">Digital Strategy</span>
@@ -232,52 +236,74 @@
                     <li class="no-icon-accordion">
                       <span class="no-icon-accordion" data-aria-accordion-heading>Provide feedback.</span>
                       <div class="no-icon-accordion" data-aria-accordion-panel>
-                        <label class="form-control-label m-t-md" for="InputName">
-                          <span class="required-label">*</span>
-                          <span class="sr-only">Required field:</span>
-                          Your name
-                        </label>
-                        <input type="text" class="form-control" id="InputName" required>
-                        <div class="invalid-feedback d-block">This field is required</div>
+                        <form autocomplete="on" method="POST" id="ContactUsForm" role="form" action="">
+                          <div class="alert alert-danger alert-banner brd-0 brd-red p-l m-t-md" role="alert">
+                            <span class="alert-icon ca-gov-icon-warning-diamond color-red" aria-hidden="true"></span>
+                            <div class="container m-l-md">
+                              <span class="alert-text gray-900 font-weight-600">
+                                Correct the errors to continue
+                              </span>
+                            </div>
+                          </div>
+                          <label class="form-control-label m-t-md" for="InputName">
+                            Your name
+                            <span class="required-label" aria-hidden="true">*</span>
+                          </label>
+                          <input autofocus type="text" class="form-control rounded-5" id="InputName" name="Name"
+                            autocomplete="name" required aria-required="true" size="65" maxlength="150" minlength="1"
+                            role="textbox" />
+                          <div class="mt-2 invalid-feedback font-weight-600 d-block">
+                            Enter your name.
+                          </div>
 
-                        <label class="form-control-label m-t-md" for="InputEmail">
-                          <span class="required-label">*</span>
-                          <span class="sr-only">Required field:</span>
-                          Email
-                        </label>
-                        <input type="text" class="form-control" id="InputEmail" required>
-                        <div class="invalid-feedback d-block">This field is required</div>
+                          <label class="form-control-label m-t-lg" for="InputEmail">
+                            Email
+                            <span class="required-label" aria-hidden="true">*</span>
+                          </label>
+                          <input type="email" class="form-control rounded-5" id="InputEmail" name="Email"
+                            autocomplete="email" required aria-required="true" size="65" maxlength="250" minlength="1"
+                            role="textbox" />
+                          <div class="mt-2 invalid-feedback font-weight-600 d-block">
+                            Enter a valid email. Example: name@email.com
+                          </div>
 
-                        <label class="form-control-label m-t-md" for="InputDepartment">Department or
-                          agency</label>
-                        <input type="text" class="form-control" id="InputDepartment">
-                        <div class="feedback text-muted"></div>
+                          <label class="form-control-label  m-t-lg" for="InputDepartment">
+                            Department or agency
+                          </label>
+                          <input type="text" class="form-control rounded-5" id="InputDepartment" name="Department"
+                            autocomplete="organization" aria-required="false" size="65" maxlength="150" minlength="1"
+                            role="textbox" />
 
-                        <label for="Select" class="m-t-md">Topic</label>
-                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example"
-                          id="Select">
-                          <option selected="">Select an option</option>
-                          <option value="1">Human-Centered Design</option>
-                          <option value="2">Efficient Growth Scaling</option>
-                          <option value="3">Promoting Standards and Best Practices</option>
-                          <option value="4">Empowering Partners</option>
-                          <option value="5">General Strategy Feedback</option>
-                          <option value="6">Other</option>
+                          <label class="form-control-label  m-t-lg" for="InputRole">
+                            Topic
+                          </label>
 
-                        </select>
+                          <select class="form-select form-select-lg mb-3" id="InputRole" name="Role">
+                            <option value="">Select an option</option>
+                            <option value="1">Focus area 1: Human-Centered Design</option>
+                            <option value="2">Focus area 2: Efficient Growth Scaling</option>
+                            <option value="3">Focus area 3: Promoting Standards and Best Practices
+                            </option>
+                            <option value="4">Focus area 4: Empowering Partners</option>
+                            <option value="5">General strategy feedback</option>
+                            <option value="6">Other</option>
+                          </select>
 
-                        <label class="form-control-label m-t-md" for="InputCommentRequired">
-                          <span class="required-label">*</span>
-                          <span class="sr-only">Required field:</span>
-                          Your feedback or comments
-                        </label>
-                        <textarea id="InputCommentRequired" class="form-control" rows="5" cols="80"></textarea>
-                        <div class="invalid-feedback d-block">This field is required</div>
+                          <label class="form-control-label  m-t-lg" for="InputComments">
+                            Your feedback or comments
+                            <span class="required-label" aria-hidden="true">*</span>
+                          </label>
+                          <textarea id="InputComments" class="form-control rounded-5" rows="5" cols="80" name="Comments"
+                            aria-required="true" required maxlength="100000" minlength="10" role="textbox"></textarea>
+                          <div class="mt-2 invalid-feedback font-weight-600 d-block">
+                            Provide feedback or comments.
+                          </div>
 
-                        <div class="btn-row m-t-lg">
-                          <button class="btn btn-primary">Submit</button>
-                          <button class="btn btn-outline-standout">Cancel</button>
-                        </div>
+                          <input type="submit" value="Submit" class="btn btn-primary m-t-lg" />
+
+                          <button class="g-recaptcha hidden" data-sitekey="enter site key here"
+                            data-callback="recaptchaCallback" data-action="submit"></button>
+                        </form>
                       </div>
                     </li>
                   </ol>
@@ -337,6 +363,190 @@
   </footer>
   <!-- Extra Decorative Content -->
   <div class="decoration-last">&nbsp;</div>
+
+  <!-- Form CSS and JS -->
+  <style type="text/css">
+    form:not(form[submit_attempted]) .form-control+.invalid-feedback,
+    form:not(form[submit_attempted]) .alert,
+    form:valid .alert,
+    .form-control:valid+.invalid-feedback {
+      display: none !important;
+    }
+
+
+    /* new */
+
+    .invalid-feedback {
+      position: relative;
+    }
+
+    .invalid-feedback::before {
+      content: "\ea2f";
+      position: absolute;
+      font-family: "CaGov";
+      font-size: 1.5rem;
+      right: 10px;
+      top: -51px;
+    }
+
+    form[submit_attempted] .alert {
+      border-left: 5px solid;
+    }
+
+    form[submit_attempted] .alert .container {
+      padding-top: 2px;
+    }
+
+    form[submit_attempted] .form-control:invalid {
+      border-bottom: 4px solid #cd402d;
+      position: relative;
+    }
+
+
+
+    .error-icon {
+      display: none;
+      float: right;
+      position: relative;
+      top: -2.7rem !important;
+      right: 10px;
+      font-size: 1.5rem;
+    }
+
+    form[submit_attempted] .form-control:invalid~.error-icon {
+      display: block;
+    }
+
+    .form-control[role="combobox"]::placeholder {
+      font-size: 1.1rem !important;
+    }
+
+    /* masking combobox carrot */
+    .combobox::before {
+      content: "\33";
+      position: absolute;
+      font-family: "CaGov";
+      font-size: 1.4rem;
+      width: 30px;
+      height: 30px;
+      background-color: white;
+      right: 5px;
+      top: 8px;
+    }
+  </style>
+
+  <div class="modal fade" id="modalResponse" role="dialog" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="h4 modal-title">Problem with submission.</h3>
+          <button type="button" class="close btn btn-secondary" data-bs-dismiss="modal">
+            <span class="sr-only">Close modal</span>
+            <span class="ca-gov-icon-close-mark" aria-hidden="true"></span>
+          </button>
+        </div>
+        <div class="modal-body">
+          There was a problem with your submission. Please wait a moment and try
+          again.
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-bs-dismiss="modal">
+            Close
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <button type="button" id="btnModal" class="hidden" data-bs-toggle="modal" data-bs-target="#modalResponse"></button>
+  <a href="contact-us-thankyou.html" id="urlThankyou" class="hidden"></a>
+
+  <script>
+    const serviceUrl = "add url here";
+
+    (() => {
+      //This code runs first
+      getForm().addEventListener("submit", submitForm);
+      getSubmitButton().addEventListener("click", () =>
+        getForm().setAttribute("submit_attempted", "")
+      );
+    })
+      ();
+
+    function getForm() {
+      return /** @type {HTMLFormElement} */ (
+        document.getElementById("ContactUsForm")
+      );
+    }
+
+    function getSubmitButton() {
+      return /** @type { HTMLButtonElement } */ (
+        getForm().querySelector("input[type=submit]")
+      );
+    }
+
+    function goToThanksPage() {
+      document.getElementById("urlThankyou").click();
+    }
+
+    function openModal() {
+      document.getElementById("btnModal").click();
+    }
+
+    function triggerRecaptcha() {
+      document.querySelector(".g-recaptcha").click(); //will trigger recaptchaCallback when complete
+    }
+
+    async function submitForm(/** @type { SubmitEvent } */ e) {
+      e.preventDefault();
+
+      getSubmitButton().disabled = true;
+      setTimeout(() => (getSubmitButton().disabled = false), 5000);
+
+      triggerRecaptcha();
+    }
+
+    function recaptchaCallback(/** @type { string } */ g_recaptcha_response) {
+      const postBody = {
+        captcha: { "g-recaptcha-response": g_recaptcha_response },
+        fields: {},
+      };
+
+      for (const pair of new FormData(getForm())) {
+        postBody.fields[pair[0]] = pair[1];
+      }
+
+      delete postBody.fields["g-recaptcha-response"]; //we already have it from the callback
+
+      /** @type { RequestInit } */
+      const request = {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postBody),
+      };
+
+      fetch(serviceUrl, request)
+        .then((response) => {
+          if (response.ok) {
+            return response.json();
+          }
+
+          throw new Error(
+            `Can't submit - ${response.status}:${response.statusText}`
+          );
+        })
+        .then((responseJson) => {
+
+          goToThanksPage();
+        })
+        .catch((error) => {
+          console.error(error);
+
+          openModal();
+        });
+    }
+  </script>
 </body>
 
 </html>
