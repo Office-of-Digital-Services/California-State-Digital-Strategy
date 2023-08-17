@@ -197,7 +197,7 @@
               </div>
             </div>
             <!-- Begin feedback form -->
-            <div class="feedback p-a-md m-t-60">
+            <div class="m-t-60">
               <div class="container">
                 <h2 class="m-t-0">Your feedback matters</h2>
                 <div class="m-b-0">
@@ -280,6 +280,39 @@
               </div>
             </div>
             <!-- End feedback form -->
+            <!-- Begin site footer -->
+            <div class="p-a-md m-t-60 site-footer bg-gray-100">
+              <div class="container d-flex">
+                <div class="col-md-6 mb-4 m-r-lg">
+                  <h4>Contributors</h4>
+                  <hr class="hr-blue" />
+                  <div class="footer-logo">
+                    <img src="images/CDT-logo.png" />
+                    <a href="https://cdt.ca.gov/">California Department of Technology</a>
+                  </div>
+                  <div class="m-t-md footer-logo">
+                    <img src="images/ODI-logo.svg" />
+                    <a href="https://innovation.ca.gov/">Office of Data and Innovation</a>
+                  </div>
+                </div>
+                <div class="col-md-6 mb-4">
+                  <h4>State Strategic plans</h4>
+                  <hr class="hr-blue" />
+                  <div>
+
+                    <div class="m-b-md"><a href="https://cdt.ca.gov/digitalid/">Digital ID Plan</a></div>
+                    <div class="m-b-md"><a
+                        href="https://cdt.ca.gov/wp-content/uploads/2023/08/Bridge-to-the-Future.pdf">Bridge
+                        to
+                        the Future</a></div>
+                    <div class="m-b-md"><a
+                        href="https://cdt.ca.gov/wp-content/uploads/2021/10/Cybersecurity_Strategy_Plan_FINAL.pdf">Information
+                        Security Roadmap - Cal-Secure</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!-- End site footer -->
           </div>
           <!-- End container -->
         </div>
@@ -333,77 +366,7 @@
   <!-- Extra Decorative Content -->
   <div class="decoration-last">&nbsp;</div>
 
-  <!-- Form CSS and JS -->
-  <style type="text/css">
-    form:not(form[submit_attempted]) .form-control+.invalid-feedback,
-    form:not(form[submit_attempted]) .alert,
-    form:valid .alert,
-    .form-control:valid+.invalid-feedback {
-      display: none !important;
-    }
-
-
-    /* new */
-
-    .invalid-feedback {
-      position: relative;
-    }
-
-    .invalid-feedback::before {
-      content: "\ea2f";
-      position: absolute;
-      font-family: "CaGov";
-      font-size: 1.5rem;
-      right: 10px;
-      top: -51px;
-    }
-
-    form[submit_attempted] .alert {
-      border-left: 5px solid;
-    }
-
-    form[submit_attempted] .alert .container {
-      padding-top: 2px;
-    }
-
-    form[submit_attempted] .form-control:invalid {
-      border-bottom: 4px solid #cd402d;
-      position: relative;
-    }
-
-
-
-    .error-icon {
-      display: none;
-      float: right;
-      position: relative;
-      top: -2.7rem !important;
-      right: 10px;
-      font-size: 1.5rem;
-    }
-
-    form[submit_attempted] .form-control:invalid~.error-icon {
-      display: block;
-    }
-
-    .form-control[role="combobox"]::placeholder {
-      font-size: 1.1rem !important;
-    }
-
-    /* masking combobox carrot */
-    .combobox::before {
-      content: "\33";
-      position: absolute;
-      font-family: "CaGov";
-      font-size: 1.4rem;
-      width: 30px;
-      height: 30px;
-      background-color: white;
-      right: 5px;
-      top: 8px;
-    }
-  </style>
-
+  <!-- Form modal & JS -->
   <div class="modal fade" id="modalResponse" role="dialog" tabindex="-1">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
