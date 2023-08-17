@@ -85,7 +85,7 @@ strong {
 }
 
 .blue-card {
-  background: #046b99;
+  border-radius: 0.3125rem;
   color: #fff;
 }
 
@@ -112,10 +112,6 @@ strong {
   color: #3b3a48;
 }
 
-.feedback {
-  background-color: #f3f3f4;
-}
-
 .focus-area-header {
   background: linear-gradient(13deg, #eef8fb 0%, #6db7d8 100%);
 }
@@ -132,11 +128,15 @@ strong {
 }
 
 .gray {
-  background: #ededef;
+  background: var(--oceanside-secondary-s-1, #eef8fb);
 }
 
 .grid-link-margin {
   margin-bottom: 1rem;
+}
+
+.hr-blue {
+  border-top-color: #046b99;
 }
 
 .light-gray {
@@ -146,6 +146,10 @@ strong {
 .logo {
   align-self: flex-end;
   width: 55px;
+}
+
+.logo-text > span {
+  color: #01395e !important;
 }
 
 .mobile-order-2 {
@@ -171,6 +175,11 @@ button::before {
 
 .objective-card > h3 {
   color: #035376;
+}
+
+.site-footer a {
+  margin-bottom: 1rem;
+  margin-left: 1rem;
 }
 
 .text-align-center {
