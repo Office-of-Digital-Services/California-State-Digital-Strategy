@@ -77,6 +77,12 @@
 </head>
 
 <body>
+  <script src="https://www.google.com/recaptcha/api.js" defer></script>
+  <script>
+    const serviceUrl = "https://fa-cdt-csds-p-002.azurewebsites.net/api/air-table";
+    const siteKey = "6Ldi86soAAAAAPb54gMfjCy7Sh7No613jBXIQqxc";
+  </script>
+
   <header role="banner" id="header" class="global-header fixed">
     <div id="skip-to-content"><a href="#main-content">Skip to Main Content</a></div>
     <!-- utility header goes here -->
@@ -274,7 +280,7 @@
               </div>
             </div>
             <!-- Begin feedback form -->
-            <!-- <div class="m-t-60">
+            <div class="m-t-60">
               <div class="container">
                 <h2 class="m-t-0">Your feedback matters</h2>
                 <div class="m-b-0">
@@ -320,19 +326,24 @@
                             autocomplete="organization" aria-required="false" size="65" maxlength="150" minlength="1"
                             role="textbox" />
 
-                          <label class="form-control-label  m-t-lg" for="InputRole">
+                          <label class="form-control-label  m-t-lg" for="InputTopic">
                             Topic
                           </label>
 
-                          <select class="form-select form-select-lg mb-3" id="InputRole" name="Role">
+                          <select class="form-select form-select-lg mb-3" id="InputTopic" name="Topic">
                             <option value="">Select an option</option>
-                            <option value="1">Focus area 1: Human-Centered Design</option>
-                            <option value="2">Focus area 2: Efficient Growth Scaling</option>
-                            <option value="3">Focus area 3: Promoting Standards and Best Practices
+                            <option value="Focus area 1: Human-Centered Design">Focus area 1:
+                              Human-Centered Design</option>
+                            <option value="Focus area 2: Efficient Growth Scaling">Focus area 2:
+                              Efficient Growth Scaling</option>
+                            <option value="Focus area 3: Promoting Standards and Best Practices">Focus
+                              area 3: Promoting Standards and
+                              Best Practices
                             </option>
-                            <option value="4">Focus area 4: Empowering Partners</option>
-                            <option value="5">General strategy feedback</option>
-                            <option value="6">Other</option>
+                            <option value="Focus area 4: Empowering Partners">Focus area 4: Empowering
+                              Partners</option>
+                            <option value="General strategy feedback">General strategy feedback</option>
+                            <option value="Other">Other</option>
                           </select>
 
                           <label class="form-control-label  m-t-lg" for="InputComments">
@@ -355,7 +366,7 @@
                   </ol>
                 </div>
               </div>
-            </div> -->
+            </div>
             <!-- End feedback form -->
             <!-- Begin site footer -->
             <div class="p-a-md m-t-60 site-footer bg-gray-100">
@@ -471,16 +482,17 @@
   <a href="contact-us-thankyou.html" id="urlThankyou" class="hidden"></a>
 
   <script>
-    const serviceUrl = "add url here";
+    document.querySelector("button.g-recaptcha").dataset.sitekey = siteKey;
 
-    (() => {
-      //This code runs first
+    window.addEventListener("load", () => {
+
       getForm().addEventListener("submit", submitForm);
       getSubmitButton().addEventListener("click", () =>
         getForm().setAttribute("submit_attempted", "")
       );
-    })
-      ();
+    });
+
+
 
     function getForm() {
       return /** @type {HTMLFormElement} */ (
@@ -537,13 +549,13 @@
       };
 
       fetch(serviceUrl, request)
-        .then((response) => {
+        .then(async (response) => {
           if (response.ok) {
             return response.json();
           }
 
           throw new Error(
-            `Can't submit - ${response.status}:${response.statusText}`
+            `Can't submit - ${response.status}:${response.statusText} ${await response.text()}`
           );
         })
         .then((responseJson) => {
